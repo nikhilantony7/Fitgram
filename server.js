@@ -12,6 +12,7 @@ const Post = require('./models/Post');
 const upload = multer();
 const app = express();
 const PORT = process.env.PORT || 3000;
+const uri = 'mongodb+srv://nikhilntn9:Y0ungD4ggerN1ck@cluster0.2bb1s.mongodb.net/fitnessTracker';
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // MongoDB Connection
-mongoose.connect("mongodb://127.0.0.1:27017/fitnessTracker", {
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
