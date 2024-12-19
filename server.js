@@ -12,7 +12,7 @@ const Post = require('./models/Post');
 const upload = multer();
 const app = express();
 const PORT = process.env.PORT || 3000;
-const uri = 'mongodb+srv://nikhilntn9:Y0ungD4ggerN1ck@cluster0.2bb1s.mongodb.net/fitnessTracker';
+const uri = process.env.MONGODB_URI;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
